@@ -6,6 +6,7 @@
   "scripts": {
     "test:ethereum": "ganache-cli -m 'layer post chase message demise fresh resource beyond bulb rose garden kite'",
     "compile": "truffle compile",
+    "migrate": "truffle migrate --network matic",
     "test": "truffle test"
   },
   "author": "",
@@ -14,6 +15,7 @@
     "truffle": "^5.0.29"
   },
   "dependencies": {
-    "ganache-cli": "^6.5.1"
+    "ganache-cli": "^6.5.1",
+    "truffle-hdwallet-provider": "^1.0.15"
   }
 }

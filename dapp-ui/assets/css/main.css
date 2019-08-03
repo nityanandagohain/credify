@@ -1,0 +1,136 @@
+#app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+#nav {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav a {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+    color: #42b983;
+}
+
+.user-display {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile {
+    margin-right: -20px;
+    margin-left: 20px;
+}
+
+
+/* 
+.greeting-div,
+.services {
+    margin-top: 10%;
+}
+
+.columns {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    margin-top: -0.25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.columns:last-child {
+    margin-bottom: -0.75rem;
+}
+
+.column {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.has-text-weight-bold {
+    font-weight: 700 !important;
+}
+
+.add-money-btn {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #007bff;
+}
+
+.add-money-link[data-v-00f45f4e] {
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    border-radius: 50px;
+    background: #f1f0f0;
+}
+
+.add-money-btn a {
+    color: #007bff;
+}
+
+a {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.balance-card {
+    color: #fff;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    mix-blend-mode: normal;
+    box-shadow: 0 2px 20px #f0ecec;
+    border-radius: 13px;
+}
+
+#drive-btns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.padding {
+    padding: 0.75rem;
+}
+
+.balance-amount {
+    font-size: 36px;
+}
+
+.card-one {
+    background: linear-gradient(135deg, #fcdf8a 0%, #f38381 100%);
+}
+
+.card-two {
+    background: linear-gradient(135deg, #fad961 0%, #f78b30 100%);
+}
+
+.card-three {
+    background: linear-gradient(135deg, #1bcedf 0%, #3b77ab 100%);
+}
+
+.card-four {
+    background: linear-gradient(135deg, #f02fc2 0%, #966eda 100%);
+}
+
+.card-five {
+    background: linear-gradient(135deg, #c53364 0%, #622774 100%);
+}
+
+.right-icon {
+    font-size: 60px;
+    font-weight: 700;
+    margin-left: 0;
+} */
