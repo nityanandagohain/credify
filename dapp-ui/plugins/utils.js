@@ -1,10 +1,12 @@
 import AirbnbABI from './deLoanABI'
 const Web3 = require('web3')
 
-let metamaskWeb3 = new Web3('https://testnet2.matic.network')
+// let metamaskWeb3 = new Web3('https://testnet2.matic.network')
+let metamaskWeb3 = new Web3('http://localhost:7545')
 let account = null
+let balance = 0
 let airbnbContract
-let airbnbContractAddress = '0xef5a10A467A3cb77aEba4a7c7220D0dd5243338d' // Paste Contract address here
+let airbnbContractAddress = '0x1e9527dE36F18D5e0003e775035d481327Ce52Fc' // Paste Contract address here
 
 export function web3() {
     return metamaskWeb3
@@ -28,6 +30,18 @@ export async function setProvider() {
         metamaskWeb3 = new Web3(web3.currentProvider);
     }
     account = await metamaskWeb3.eth.getAccounts()
+        // metamaskWeb3.eth.getBalance(account[0], function(error, result) {
+        //     if (!error) {
+        //         balance = metamaskWeb3.utils.toBN(result).mul(metamaskWeb3.utils.toBN(2));
+        //         console.log("balance", balance)
+        //     }
+        // });
+    metamaskWeb3.eth.getBalance(account[0]).then((bal) => {
+        // const doubled = metamaskWeb3.utils.toBN(bal).mul(metamaskWeb3.utils.toBN(2));
+        const doubled = metamaskWeb3.utils.fromWei(bal, "ether") + " ETH"
+            // console.log(doubled);
+        balance = parseFloat(doubled.toString()).toFixed(5)
+    });
 }
 
 
@@ -94,27 +108,32 @@ export async function fetchAllProperties() {
                 // price: metamaskWeb3.utils.fromWei(p.price)
         })
     }
-
     //  0      ,  1    
     // {'0':[{}{}],'1':[{}{}{}]}
-    // let loan_lenders = {};
-    // myLoans.forEach((loan, index) => {
-    //     console.log(loan, index)
-    //     for (let i = 0; i < Lenders.length; i++) {
-    //         if (Lenders[i].loanId == loan.id) {
+    let loan_lenders = {};
+    myLoans.forEach((loan, index) => {
+        let temp_lender = [];
+        for (let i = 0; i < Lenders.length; i++) {
+            if (Lenders[i].loanId == loan.id) {
+                console.log("yess")
+                temp_lender.push(Lenders[i]);
+            }
+        }
+        loan_lenders[loan.id] = temp_lender;
+    });
 
-    //         }
-    //     }
-    // });
-
-    // console.log('loan_lenders', loan_lenders)
+    console.log('loan_lenders', loan_lenders)
 
     console.log("fetchAllProperties", LoanItems)
-
 
     return {
         myLoans,
         notMyLoans,
-        // loan_lenders
+        loan_lenders
     };
+}
+
+
+export async function get_wallet_amount() {
+    return balance;
 }

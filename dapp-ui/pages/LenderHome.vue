@@ -26,7 +26,7 @@
                   style="    margin-right: 20px; width: 32px;"
                 />
               </span>
-              <span class="balance-amount">5000.0</span>
+              <span class="balance-amount">{{this.balance}}</span>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@
                   src="https://cdn.worldvectorlogo.com/logos/dai-2.svg"
                   style="width: 26px;    margin-right: 20px;"
                 />
-                <span class="loan-demand">{{i.requested_amount}}</span>
+                <span class="loan-demand">{{Number(i.requested_amount) - Number(i.amount_recieved)}}</span>
                 <div class="superb">
                   <span>Eth</span>
                   <span style="margin-left:10px; color: darkgrey;">{{i.borrower_address}}</span>
@@ -104,7 +104,7 @@
 </template>
 
 <script>
-import { fetchAllProperties, setProvider, lendLoan } from "~/plugins/utils";
+import { fetchAllProperties, setProvider, lendLoan, get_wallet_amount } from "~/plugins/utils";
 export default {
   components: {},
   async mounted() {
@@ -117,11 +117,16 @@ export default {
     this.notMyLoans = properties.notMyLoans;
     console.log('not my ,oan', this.notMyLoans)
     // this.price = message
+
+
+    // fetch wallet balance
+    this.balance = await get_wallet_amount()
   },
   data() {
     return {
       notMyLoans: [],
-      price: 0
+      price: 0,
+      balance: 0
     };
   },
   methods: {

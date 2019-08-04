@@ -82,7 +82,7 @@
         <i class="fas fa-circle-notch fa-spin" ></i>
       </div>
 
-    <div class="padding" >
+    <div class="padding">
       <div class="columns-new" v-for="i in myLoans" :key="i.id">
         <div class="column">
           <span>
@@ -119,6 +119,7 @@ export default {
   },
   methods: {
     async postAd() {
+      await createALoan(50);
       const properties = await fetchAllProperties();
       // this.posts = properties
       console.log("props  coming in machu takeloan: ", properties);

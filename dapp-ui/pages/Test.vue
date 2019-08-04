@@ -110,15 +110,15 @@
     <div id="footer" class="services">
       <div class="columns has-text-centered is-mobile">
         <div class="column">
-          <a href="/nfts" class>
+          <a href="/LenderHome" class>
             <div style="margin-top: 1em;">
               <img src="../assets/takeloan'.svg" alt="service" class="icon" />
-              <div class="title">Take Loan</div>
+              <div class="title">Lend Loan</div>
             </div>
           </a>
         </div>
         <div class="column">
-          <a href="/history" class>
+          <a href="/test" class>
             <div style="margin-top: 1em;">
               <img src="../assets/home.svg" alt="service" class="icon" />
               <div class="title">Home</div>
