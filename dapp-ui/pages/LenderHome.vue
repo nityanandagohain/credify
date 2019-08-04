@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div id="geetings">
+    <div id="greetings">
       <div class="greeting-div">
         <div class="columns is-mobile">
           <div class="column has-text-weight-bold">
@@ -59,52 +59,26 @@
               <input
                 class="input"
                 type="number"
-                v-model="price"
+                v-model="form.parent_id[i.id]"
                 placeholder="Text input"
                 style="width:60%"
               />
-              <a @click="lendALoan(i.id, price)" class="button is-link">Give Loan</a>
+              <a @click="lendALoan(i.id, form.parent_id[i.id])" class="button is-link">Give Loan</a>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- <div class="padding">
-        <div class="balance-card has-text-centered balance-card">
-          <div class>
-            <div class="columns">
-              <div class="columns">
-                <div class="column" style="    margin-left: 50px;">
-                  <span class="big">9.8</span>
-                  <br />
-                  <span class="rate">Rating</span>
-                </div>
-              </div>
-              <div class="column">
-                <img
-                  src="https://cdn.worldvectorlogo.com/logos/dai-2.svg"
-                  style="width: 26px;    margin-right: 20px;"
-                />
-                <span class="loan-demand">50</span>
-                <div class="superb">
-                  <span>Eth</span>
-                  <span style="margin-left:10px; color: darkgrey;">asdasdw</span>
-                </div>
-              </div>
-            </div>
-            <div class="padding">
-              <input class="input" type="number" placeholder="Text input" style="width:60%" />
-              <a class="button is-link">Give Loan</a>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import { fetchAllProperties, setProvider, lendLoan, get_wallet_amount } from "~/plugins/utils";
+import {
+  fetchAllProperties,
+  setProvider,
+  lendLoan,
+  get_wallet_amount
+} from "~/plugins/utils";
 export default {
   components: {},
   async mounted() {
@@ -114,19 +88,21 @@ export default {
     // fetch all properties
     const properties = await fetchAllProperties();
     // this.posts = properties
-    this.notMyLoans = properties.notMyLoans;
-    console.log('not my ,oan', this.notMyLoans)
+    this.notMyLoans = properties.notMyLoans.reverse();
+    console.log("not my loan", this.notMyLoans);
     // this.price = message
 
-
     // fetch wallet balance
-    this.balance = await get_wallet_amount()
+    this.balance = await get_wallet_amount();
   },
   data() {
     return {
       notMyLoans: [],
-      price: 0,
-      balance: 0
+      price_id: [],
+      balance: 0,
+      form: {
+          parent_id: []
+        }
     };
   },
   methods: {

@@ -11,34 +11,6 @@
       </div>
     </div>
 
-    <!-- <div class="padding">
-      <div class="balance-card card-one has-text-centered balance-card">
-        <div class="columns-new">
-          <div class="column">
-            <span class="large">50.0</span>
-          </div>
-        </div>
-        <div class="columns-new">
-          <div class="column">
-            <span class="balance-coin">Tenure:</span>
-            <span class="balance-amount-new">6 months</span>
-          </div>
-        </div>
-        <div class="columns-new">
-          <div class="column">
-            <span class="balance-coin">EMIs:</span>
-            <span class="balance-amount-new">6</span>
-          </div>
-        </div>
-        <div class="columns-new">
-          <div class="column">
-            <span class="balance-coin">Total Interest @24%:</span>
-            <span class="balance-amount-new">122</span>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
     <div class="padding">
       <div class="balance-card op card-one has-text-centered balance-card">
         <div class>
@@ -53,7 +25,7 @@
             <span class="balance-coin">
               <!-- <img src="https://cdn.worldvectorlogo.com/logos/dai-2.svg" class="padlock" /> -->
             </span>
-            <span class="balance-amount-new">ROI@26%</span>
+            <span class="balance-amount-new" style="    margin-right: -1px;">Total Interest@26%</span>
             <span class="balance-amount-new">$ 63</span>
           </div>
           <div class="columns cnt">
@@ -61,7 +33,7 @@
               <!-- <img src="https://cdn.worldvectorlogo.com/logos/dai-2.svg" class="padlock" /> -->
             </span>
             <span class="balance-amount-new">Tenure</span>
-            <span class="balance-amount-new">90 days</span>
+            <span class="balance-amount-new">3 months</span>
           </div>
           <div class="columns cnt">
             <span class="balance-coin">
@@ -74,23 +46,25 @@
       </div>
     </div>
 
-    <div v-on:click="postAd" class="padding">
-      <a class="button is-link">Request Loan</a>
+    <div v-on:click="postAd" class="padding centra">
+      <a class="button is-link" style="border-radius:20px">Request Loan</a>
     </div>
-
+    <!-- 
       <div class="fa-3x" style="display: block; color: black;">
         <i class="fas fa-circle-notch fa-spin" ></i>
-      </div>
+    </div>-->
 
-    <div class="padding">
-      <div class="columns-new" v-for="i in myLoans" :key="i.id">
+    <div class="padding" v-if="showMe">
+      <div class="columns-new">
         <div class="column">
           <span>
             Amount Requested:
-            <span class>{{i.requested_amount}}</span>
+            <span>{{this.myLoan.requested_amount}}</span>
           </span>
-          <span>Amount Received: {{i.amount_recieved}}</span>
-          <span>Date: 12/12/1999</span>
+          <br>
+          <span>Amount Received: {{this.myLoan.amount_recieved}}</span>
+          <br>
+          <span>Date: 04/08/2019</span>
         </div>
       </div>
     </div>
@@ -111,11 +85,18 @@ export default {
     return {
       price: 50,
       myLoans: null,
+      myLoan: null,
       notMyLoans: null,
       showMe: false,
       loan_lenders: null,
       currentLenders: []
     };
+  },
+  async mounted() {
+    // const properties = await fetchAllProperties();
+    // this.myLoan = properties.myLoans[properties.myLoans.length - 1];
+    // console.log("thisnsf ", this.myLoan.requested_amount);
+    // this.showMe = !this.showMe;
   },
   methods: {
     async postAd() {
@@ -140,6 +121,11 @@ export default {
 </script>
 
 <style scoped>
+.centra {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
 .large {
   font-size: 50px;
 }

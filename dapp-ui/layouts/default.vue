@@ -21,16 +21,41 @@
             />
           </div>
           <div class="profile" @click="goToProfile()">
-            <img
-              data-v-126af358
-              style="width: 35px;"
-              src="../assets/profile.svg"
-            />
+            <img data-v-126af358 style="width: 35px;" src="../assets/profile.svg" />
           </div>
         </div>
       </div>
     </div>
     <nuxt class="mt" />
+
+    <div id="footer" class>
+      <div class="columns-normal has-text-centered is-mobile">
+        <div class="column">
+          <a href="/LenderHome" class>
+            <div>
+              <img src="../assets/takeloan'.svg" alt="service" class="icon" />
+              <div class="title">Lend Loan</div>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a href="/test" class>
+            <div>
+              <img src="../assets/home.svg" alt="service" class="icon" />
+              <div class="title">Home</div>
+            </div>
+          </a>
+        </div>
+        <div class="column">
+          <a href="/test" class>
+            <div>
+              <img src="../assets/repaylaon.svg" alt="service" class="icon" />
+              <div class="title">Repay Loan</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -81,6 +106,11 @@ export default {
   font-size: xx-large;
   color: #007bff;
 }
+.title {
+  font-size: 1rem;
+  color: #007bff;
+  margin: 2px;
+}
 
 #nav {
   position: fixed;
@@ -93,6 +123,14 @@ export default {
   left: 0;
   width: 100vw;
   height: 2em; */
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 8em;
 }
 
 .mt {
@@ -189,6 +227,10 @@ html {
   margin-left: -0.75rem;
   margin-right: -0.75rem;
   margin-top: -0.25rem;
+  display: flex;
+  justify-content: space-between;
+}
+.columns-normal {
   display: flex;
   justify-content: space-between;
 }

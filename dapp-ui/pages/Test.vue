@@ -107,34 +107,7 @@
       <a class="button is-link">Loan</a>
       <a class="button is-link">Payment</a>
     </div>-->
-    <div id="footer" class="services">
-      <div class="columns has-text-centered is-mobile">
-        <div class="column">
-          <a href="/LenderHome" class>
-            <div style="margin-top: 1em;">
-              <img src="../assets/takeloan'.svg" alt="service" class="icon" />
-              <div class="title">Lend Loan</div>
-            </div>
-          </a>
-        </div>
-        <div class="column">
-          <a href="/test" class>
-            <div style="margin-top: 1em;">
-              <img src="../assets/home.svg" alt="service" class="icon" />
-              <div class="title">Home</div>
-            </div>
-          </a>
-        </div>
-        <div class="column">
-          <a href="/withdraw" class>
-            <div style="margin-top: 1em;">
-              <img src="../assets/repaylaon.svg" alt="service" class="icon" />
-              <div class="title">Repay Loan</div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
+    
   </div>
 </template>
 
