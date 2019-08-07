@@ -33,7 +33,7 @@
       </div>
 
       <div class="padding" v-for="i in notMyLoans" :key="i.id">
-        <div class="balance-card has-text-centered balance-card">
+        <div class="balance-card card-one has-text-centered balance-card">
           <div class>
             <div class="columns">
               <div class="columns">
@@ -218,6 +218,75 @@ a {
 .right-icon {
   font-size: 50px;
   margin-left: 50px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 8em;
+}
+
+
+.greeting-div,
+.services {
+  margin-top: 10%;
+}
+.columns {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-top: -0.25rem;
+  display: flex;
+  justify-content: space-between;
+}
+.columns-normal {
+  display: flex;
+  justify-content: space-between;
+}
+.columns:last-child {
+  margin-bottom: -0.75rem;
+}
+.column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.has-text-weight-bold {
+  font-weight: 700 !important;
+}
+.add-money-btn {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #007bff;
+}
+.add-money-link {
+  padding: 5px 10px;
+  border: 1px solid #007bff;
+  border-radius: 50px;
+  background: #f1f0f0;
+}
+.add-money-btn a {
+  color: #007bff;
+}
+
+a {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+}
+.balance-card {
+  color: #fff;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  /* background: linear-gradient(217.3deg, #fdc67e 54.82%, #f87898 98.16%); */
+  mix-blend-mode: normal;
+  box-shadow: 0 2px 20px #f0ecec;
+  border-radius: 13px;
 }
 </style>
 

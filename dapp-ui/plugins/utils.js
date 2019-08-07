@@ -6,7 +6,7 @@ let metamaskWeb3 = new Web3('http://localhost:7545')
 let account = null
 let balance = 0
 let airbnbContract
-let airbnbContractAddress = '0x1e9527dE36F18D5e0003e775035d481327Ce52Fc' // Paste Contract address here
+let airbnbContractAddress = '0x50FcCa82ce4f4457ED126bf9e465895Af9551660' // Paste Contract address here
 
 export function web3() {
     return metamaskWeb3
@@ -65,7 +65,8 @@ export async function createALoan(amount) {
 export async function lendLoan(spaceId, amount) {
     // TODO: call Airbnb.rentSpace
     const prop = await getAirbnbContract().methods.lendALoan(spaceId, amount).send({
-        from: account[0]
+        from: account[0],
+        value: amount
     })
     alert('Property Booked Successfully')
 }

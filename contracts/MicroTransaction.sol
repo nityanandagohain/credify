@@ -50,7 +50,7 @@ contract MicroTransaction {
     * @param _loanId id of the loan to lend
     * @param paying_amount amount that the lender wants to pay
     */
-    function lendALoan(uint256 _loanId,uint256 paying_amount) public{
+    function lendALoan(uint256 _loanId,uint256 paying_amount) public payable{
         // Retrieve `loanItem` object from the storage
         Loan storage loan = loans[_loanId];
 
@@ -75,6 +75,7 @@ contract MicroTransaction {
         lenders[lenderId] = Lender(paying_amount, msg.sender, _loanId);
 
         // store the lender object id to the Loan
+        _sendFunds(loan.borrower_address, msg.value);
 
         lenderId++;
 

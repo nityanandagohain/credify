@@ -727,17 +727,6 @@ body > * {
   width: 32px;
   margin-left: 2.5rem;
 }
-#footer {
-  position: fixed;
-  bottom: 0.5;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  /* position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%; */
-}
 .op {
   height: 11rem;
   opacity: 1;
